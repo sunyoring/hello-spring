@@ -6,6 +6,9 @@ import com.sunyo.hellospring.repository.MemberRepository;
 import java.util.List;
 import java.util.Optional;
 
+/*
+@Service
+*/
 public class MemberService {
 /*ctrl + shift + t : 테스트 자동 생성 */
     private final MemberRepository memberRepository;

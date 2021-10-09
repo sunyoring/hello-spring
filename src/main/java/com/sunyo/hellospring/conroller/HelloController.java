@@ -19,27 +19,27 @@ public class HelloController {
     //mvc방식으로 데이터 전달하여 화면 띄우기
     @GetMapping("hello-mvc")
     public String helloMvc(@RequestParam("name") String name, Model model) {  //@RequestParam : 웹에서 인자를 받는다.
-        model.addAttribute("name",name); //키와 값의 형태로 파라미터로 넘어온 name을 넣어준다.
+        model.addAttribute("name", name); //키와 값의 형태로 파라미터로 넘어온 name을 넣어준다.
         return "hello-template";
     }
 
     //API방식으로 데이터 전달하여 화면 띄우기기
     @GetMapping("hello-string")
     @ResponseBody
-    public String helloString(@RequestParam("name") String name){
+    public String helloString(@RequestParam("name") String name) {
         return "hello " + name; //
     }
 
 
     @GetMapping("hello-api")
     @ResponseBody
-    public Hello helloApi(@RequestParam("name") String name){
+    public Hello helloApi(@RequestParam("name") String name) {
         Hello hello = new Hello();
         hello.setName(name);
         return hello;
     }
 
-    static class Hello{
+    static class Hello {
         private String name;
 
         public String getName() {
@@ -50,7 +50,6 @@ public class HelloController {
             this.name = name;
         }
     }
-
 
 
 }
